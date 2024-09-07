@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Hot Dog Sales Results</title>
+</head>
+<body>
+    <h1>Hot Dog Sales Report</h1>
+    <p>Total Hot Dogs Sold: {{ total_sales }}</p>
+    
+    <h2>Sales Data</h2>
+    <ul>
+        {% for hot_dog, sales in sales_data.items() %}
+        <li>{{ hot_dog }}: {{ sales }} sold, Profit: ${{ profits[hot_dog] }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Best Selling Hot Dog</h2>
+    <p>The hot dog with the highest profit is <br> {{ best_hot_dog }} with a profit of ${{ best_profit }}.</p>
+
+    <a href="/">Go Back</a>
+</body>
+</html>
